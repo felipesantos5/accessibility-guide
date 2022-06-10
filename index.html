@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia de Acessibilidade HTML5</title>
+  <meta name="description" content="Uma página focada em ensinar como ter uma pagina HTML com mais acessibilidade para deficiêntes visuais">
+
+  <link rel="shortcut icon" href="/img/icon_cego.png" type="image/x-icon">
+  <link rel="stylesheet" href="/style/style.css">
+</head>
+
+<body>
+  <section class="container_geral">
+    <div class="content">
+
+      <section>
+        <h1>GUIA DE ACESSIBILIDADE HTML PARA DEFICIÊNTES VISUAIS</h1>
+
+        <p class="principal_p">Um ponto pouco questionado na internet é a acessibilidade, que acaba sendo deixada de lado por diversos motivos na hora de desenvolver um site em HTML.</p>
+        
+        <p class="principal_p">De acordo com um levantamento feito pelo Movimento Web Para Todos e a plataforma de dados BigDataCorp, divulgado no dia 20 de maio do ano de 2020, a maior parte da web brasileira é inacessível aos 45 milhões de cidadãos que possuem alguma deficiência. Os dados são assustadores: menos de 1% dos sites tiveram sucesso em todos os testes de acessibilidade aplicados.</p>
+
+        <p>Sendo assim trago algumas soluções para mudar esse cenário, com exemplos de código, principalmente para desenvolvedores front-end implentarem nos seus códigos e mudarem esse cenário web.</p>
+
+
+      </section>
+
+      <section class="container_boxes">
+        <div class="conteudo_box_item">
+          <h2>A linguagem do seu documento</h2>
+
+          <p class="principal_p">Logo no início do HTML, defina a linguagem que você está utilizando. A definição do idioma no documento ajuda tecnologias assistivas a definirem o perfil de voz e conjunto de caracteres.</p>
+
+          <p>Usando o atributo <code class="lang">lang</code> da própria tag <code>&lsaquo;html&rsaquo;</code>, como mostra o exemplo:</p>
+
+          <pre>
+          <code class="container_code">
+&lsaquo;<span class="span_grey">!DOCTYPE html</span>&rsaquo;
+&lsaquo;<span class="span_red">html</span> <span class="span_orange">lang</span>="<span class="span_green">pt-br</span>"&rsaquo;
+
+  &lsaquo;<span class="span_red">head</span>&rsaquo;
+    &lsaquo;<span class="span_grey">!-- Cabeçalho da página --</span>&rsaquo;
+  &lsaquo;/<span class="span_red">head</span>&rsaquo;
+
+  &lsaquo;<span class="span_red">body</span>&rsaquo;
+    &lsaquo;<span class="span_grey">!-- Corpo da página --</span>&rsaquo;
+  &lsaquo;/<span class="span_red">body</span>&rsaquo;
+&lsaquo;/<span class="span_red">html</span>&rsaquo;
+          </code>
+          </pre>
+        </div>
+
+        <div class="conteudo_box_item">
+          <h2>Estrutura textual semântica</h2>
+
+          <p class="principal_p">Utilize tags adequadas para títulos(&lsaquo;h1&rsaquo;), subtítulos(&lsaquo;h2&rsaquo; ao &lsaquo;h6&rsaquo;), parágrafos
+            (&lsaquo;p&rsaquo;) e listas (&lsaquo;ul&rsaquo; ou &lsaquo;ol&rsaquo;) no seu conteúdo textual. O leitor de telas vai identificar cada elemento para o
+            usuário, permitindo ainda navegar de título em título.</p>
+
+          <p>Exemplo de uma estrutura acessível de um conteúdo textual é:</p>
+
+          <pre>
+          <code class="container_code">
+&lsaquo;<span class="span_red">div</span> <span class="span_orange">id</span>="<span class="span_green">titulo</span>"&rsaquo;Titulo&lsaquo;/<span class="span_red">div</span>&rsaquo;
+&lsaquo;<span class="span_red">br</span>&rsaquo;&lsaquo;/<span class="span_red">br</span>&rsaquo;
+Texto sem marcação e nenhuma acessibilidade.
+&lsaquo;<span class="span_red">br</span>&rsaquo;&lsaquo;/<span class="span_red">br</span>&rsaquo;
+1.item da lista
+&lsaquo;<span class="span_red">br</span>&rsaquo;&lsaquo;/<span class="span_red">br</span>&rsaquo;
+2.item da lista
+&lsaquo;<span class="span_red">br</span>&rsaquo;&lsaquo;/<span class="span_red">br</span>&rsaquo;
+3.item da lista
+          </code>
+          </pre>
+
+          <p>Esse exemplo terá a mesma aparência visual, porém não terá a mesma semântica:</p>
+
+          <pre>
+          <code class="container_code">
+&lsaquo;<span class="span_red">h1</span>&rsaquo;Titulo&lsaquo;/<span class="span_red">h1</span>&rsaquo;
+
+&lsaquo;<span class="span_red">p</span>&rsaquo;Texto com marcações e com acessibilidade&lsaquo;/<span class="span_red">p</span>&rsaquo;
+
+&lsaquo;<span class="span_red">ol</span>&rsaquo;
+  &lsaquo;<span class="span_red">li</span>&rsaquo;item da lista&lsaquo;/<span class="span_red">li</span>&rsaquo;
+
+  &lsaquo;<span class="span_red">li</span>&rsaquo;item da lista&lsaquo;/<span class="span_red">li</span>&rsaquo;
+
+  &lsaquo;<span class="span_red">li</span>&rsaquo;item da lista&lsaquo;/<span class="span_red">li</span>&rsaquo;
+&lsaquo;/<span class="span_red">ol</span>&rsaquo;
+          </code>
+          </pre>
+        </div>
+
+        <div class="conteudo_box_item">
+          <h2>Elementos de interação</h2>
+          <p>Controles de User Interface (UI) são os elementos com os quais o usuário interage, como botões, links e
+            formulários. Navegadores permitem que esses controles sejam acessados pelo teclado. Eles devem ser usados
+            adequadamente, pois são elementos com padrões de acessibilidade nativos que facilitam a navegação.</p>
+        </div>
+
+        <div class="conteudo_box_item">
+          <h2>Landmarks</h2>
+
+          <p class="principal_p">Landmarks são pontos de referência utilizados por leitores de tela para saltos no conteúdo. Devem ser usados
+            para marcar blocos importantes, como menu de navegação, conteúdo principal, campos de busca, entre outros,
+            permitindo que o usuário chegue diretamente a esses elementos.</p>
+
+          <p>Para criar landmarks, devemos incluir o atributo <code>&lsaquo;role&rsaquo;</code> no elemento, identificando seu valor semântico (como <span class="span_orange">search</span>, <span class="span_orange">form</span>, <span class="span_orange">navigation</span>, <span class="span_orange">article</span>, entre outros).</p>
+
+          <pre>
+          <code class="container_code">
+&lsaquo;<span class=span_red>div</span> <span class=span_orange>role</span>="<span class="span_green">navigation</span>"&rsaquo;
+  &lsaquo;<span class=span_red>h2</span>&rsaquo;Papel Menu&lsaquo;/<span class=span_red>h2</span>&rsaquo;
+  &lsaquo;<span class=span_red>ul</span> <span class=span_orange>role</span>="<span class="span_green">menu</span>" <span class=span_orange>id</span>="<span class="span_green">menu</span>"&rsaquo;
+    &lsaquo;<span class=span_red>li</span> <span class=span_orange>role</span>="<span class="span_green">menuitem</span>"&rsaquo;&lsaquo;<span class=span_red>a</span> <span class=span_orange>href</span>="<span class="span_green">#</span>">MenuItem 1&lsaquo;/<span class=span_red>a</span>&rsaquo;&lsaquo;/<span class="span_red">li</span>&rsaquo;
+    &lsaquo;<span class=span_red>li</span> <span class=span_orange>role</span>="<span class="span_green">menuitem</span>"&rsaquo;&lsaquo;<span class=span_red>a</span> <span class=span_orange>href</span>="<span class="span_green">#</span>">MenuItem 2&lsaquo;/<span class=span_red></span><span class="span_red">a</span>&rsaquo;&lsaquo;/<span class="span_red">li</span>&rsaquo;
+    &lsaquo;<span class=span_red>li</span> <span class=span_orange>role</span>="<span class="span_green">menuitem</span>"&rsaquo;&lsaquo;<span class=span_red>a</span> <span class=span_orange>href</span>="<span class="span_green">#</span>">MenuItem 3&lsaquo;/<span class=span_red></span><span class="span_red">a</span>&rsaquo;&lsaquo;/<span class="span_red">li</span>&rsaquo;
+    &lsaquo;<span class=span_red>li</span> <span class=span_orange>role</span>="<span class="span_green">menuitem</span>"&rsaquo;&lsaquo;<span class=span_red>a</span> <span class=span_orange>href</span>="<span class="span_green">#</span>">MenuItem 4&lsaquo;/<span class=span_red></span><span class="span_red">a</span>&rsaquo;&lsaquo;/<span class="span_red">li</span>&rsaquo;
+    &lsaquo;<span class=span_red>li</span> <span class=span_orange>role</span>="<span class="span_green">menuitem</span>"&rsaquo;&lsaquo;<span class=span_red>a</span> <span class=span_orange>href</span>="<span class="span_green">#</span>">MenuItem 5&lsaquo;/<span class=span_red></span><span class="span_red">a</span>&rsaquo;&lsaquo;/<span class="span_red">li</span>&rsaquo;
+    &lsaquo;<span class=span_red>li</span> <span class=span_orange>role</span>="<span class="span_green">menuitem</span>"&rsaquo;&lsaquo;<span class=span_red>a</span> <span class=span_orange>href</span>="<span class="span_green">#</span>">MenuItem 6&lsaquo;/<span class=span_red></span><span class="span_red">a</span>&rsaquo;&lsaquo;/<span class="span_red">li</span>&rsaquo;
+    &lsaquo;<span class=span_red>li</span> <span class=span_orange>role</span>="<span class="span_green">menuitem</span>"&rsaquo;&lsaquo;<span class=span_red>a</span> <span class=span_orange>href</span>="<span class="span_green">#</span>">MenuItem 7&lsaquo;/<span class=span_red></span><span class="span_red">a</span>&rsaquo;&lsaquo;/<span class="span_red">li</span>&rsaquo;
+  &lsaquo;/<span class="span_red">ul</span>&rsaquo;
+&lsaquo;/<span class="span_red">div</span>&rsaquo;
+          </code>
+          </pre>
+
+        </div>
+
+        <div class="conteudo_box_item">
+          <h2>Imagens</h2>
+
+          <p class="principal_p">No HTML, as imagens devem possuir o atributo alt com um texto alternativo que descreva seu conteúdo. Para assim o leitor de tela poder fazer seu trabalho.</p>
+
+          <p></p>
+
+          <pre>
+            <code class="container_code">
+&lsaquo;<span class="span_red">img</span><span class="span_orange"> src</span>="<span class="span_green">imagem/foto_de_cachorro</span>" <span class="span_orange">alt</span>="<span class="span_green">foto ilustrando um pug tomando água</span>"&lsaquo;/<span class="span_red">img</span>&rsaquo;
+            </code>
+          </pre>
+        </div>
+
+        <div class="conteudo_box_item">
+          <h2>Tabelas</h2>
+          <p>Tabelas devem ser escritas em HTML com células de cabeçalho associadas corretamente às suas colunas ou linhas, para uma leitura mais clara do leitor de telas. Ou seja, é importante separar corretamente o conteúdo em tags <code>&lsaquo;th&rsaquo;</code> e <code>&lsaquo;td&rsaquo;</code>. É possível, ainda, especificar se <th> é cabeçalho de linhas ou colunas, utilizando o atributo scope.
+          </p>
+
+          <pre>
+            <code class="container_code"> 
+&lsaquo;<span class=span_red>table</span>&rsaquo;
+  &lsaquo;<span class=span_red>tr</span>&rsaquo;
+    &lsaquo;<span class=span_red>th</span>&rsaquo;&lsaquo;/<span class=span_red>th</span>&rsaquo;
+    &lsaquo;<span class=span_red>th</span> <span class="span_orange">scope</span>="<span class="span_green">col</span>"&rsaquo;Month&lsaquo;/<span class=span_red>th</span>&rsaquo;
+    &lsaquo;<span class=span_red>th</span> <span class="span_orange">scope</span>="<span class="span_green">col</span>"&rsaquo;Savings&lsaquo;/<span class=span_red>th</span>&rsaquo;
+  &lsaquo;/<span class=span_red>tr</span>&rsaquo;
+  &lsaquo;<span class=span_red>tr</span>&rsaquo;
+    &lsaquo;<span class=span_red>td</span>&rsaquo;1&lsaquo;/<span class=span_red>td</span>&rsaquo;
+    &lsaquo;<span class=span_red>td</span>&rsaquo;January&lsaquo;/<span class=span_red>td</span>&rsaquo;
+    &lsaquo;<span class=span_red>td</span>&rsaquo;$100&lsaquo;/<span class=span_red>td</span>&rsaquo;
+  &lsaquo;/<span class=span_red>tr</span>&rsaquo;
+  &lsaquo;<span class=span_red>tr</span>&rsaquo;
+    &lsaquo;<span class=span_red>td</span>&rsaquo;2&lsaquo;/<span class=span_red>td</span>&rsaquo;
+    &lsaquo;<span class=span_red>td</span>&rsaquo;February&lsaquo;/<span class=span_red>td</span>&rsaquo;
+    &lsaquo;<span class=span_red>td</span>&rsaquo;$80&lsaquo;/<span class=span_red>td</span>&rsaquo;
+  &lsaquo;/<span class=span_red>tr</span>&rsaquo;
+&lsaquo;/<span class=span_red>table</span>&rsaquo;
+            </code>
+          </pre>
+
+        </div>
+      </section>
+    </div>
+  </section>
+</body>
+</html>
