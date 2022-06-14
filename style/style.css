@@ -13,7 +13,7 @@ body {
   line-height: 1.5;
 }
 
-h1::selection {
+.container h1::selection {
   background-color: RGB(216, 66, 21);
 }
 
@@ -34,16 +34,16 @@ span::selection {
 }
 
 .span_red::selection {
-    background-color: black;
+  background-color: black;
 }
-
 
 .container_geral {
   background: RGB(25, 25, 26);
+  display: flex;
 }
 
 .content {
-  width: 1400px;
+  width: 1200px;
   margin-inline: auto;
 }
 
@@ -51,10 +51,10 @@ span::selection {
 
 h1 {
   font-size: 2.5rem;
-
+  text-align: center;
   margin-bottom: 50px;
   padding-top: 40px;
-} 
+}
 
 .conteudo_box_item {
   padding-bottom: 40px;
@@ -74,26 +74,21 @@ h2 {
 p {
   font-size: 1.3rem;
   margin-bottom: 50px;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .principal_p {
   margin-bottom: 20px;
 }
 
-code {
-  font-size: 1.3rem;
-  color: RGB(162, 168, 183);
-}
 
-p code {
-  background-color: black;
-  color: RGB(215, 107, 114);
-}
+
 
 /*======== COLORS SPAN ===============*/
 
 .span_orange {
-  color:RGB(209, 154, 103);
+  color: RGB(209, 154, 103);
 }
 
 .span_red {
@@ -111,13 +106,72 @@ p code {
 /*======== BOX CODE SEPADOS ===============*/
 
 .container_code {
-  display: block;
-  padding-left: 20px;
+  
 
-  background-color: RGB(40, 45, 52);
-  border-radius: 10px;
+  
+  
 }
 
-.lang {
-  padding-inline: 4px;
+pre {
+  background-color: RGB(40, 45, 52);
+  border-radius: 10px;
+  padding-left: 20px;
+  
+}
+
+code {
+  font-size: 1.3rem;
+  color: RGB(162, 168, 183);
+}
+
+
+.codigo_separado {
+  background-color: black;
+  color: RGB(215, 107, 114);
+}
+
+/*============= RESPONSIVIDADE ===============*/
+
+@media(max-width: 1400px) {
+  .content {
+    width: 1100px;
+
+  }
+}
+
+@media(max-width: 1200px) {
+  .content {
+    width: 900px;
+  }
+
+  .codigo_imagens {
+    display: none;
+  }
+
+}
+
+@media(max-width: 1024px) {
+  .content {
+    width: 700px;
+  }
+}
+
+@media(max-width: 768px) {
+  .content {
+    width: 400px;
+  }
+  
+  .codigo_landmarks {
+    display: none;
+  }
+
+  .codigo_estrutura {
+    display: none;
+  }
+}
+
+@media(max-width :425px) {
+  .content {
+    width: 320px;
+  }
 }
