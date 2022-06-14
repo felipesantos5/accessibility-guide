@@ -82,9 +82,6 @@ p {
   margin-bottom: 20px;
 }
 
-
-
-
 /*======== COLORS SPAN ===============*/
 
 .span_orange {
@@ -104,13 +101,6 @@ p {
 }
 
 /*======== BOX CODE SEPADOS ===============*/
-
-.container_code {
-  
-
-  
-  
-}
 
 pre {
   background-color: RGB(40, 45, 52);
@@ -174,4 +164,13 @@ code {
   .content {
     width: 320px;
   }
+
+  .codigo_tabela {
+    display: none;
+  }
+
+  .codigo_documento {
+    display: none;
+  }
+
 }
