@@ -114,7 +114,6 @@ code {
   color: RGB(162, 168, 183);
 }
 
-
 .codigo_separado {
   background-color: black;
   color: RGB(215, 107, 114);
@@ -158,12 +157,6 @@ code {
   .codigo_estrutura {
     display: none;
   }
-}
-
-@media(max-width :425px) {
-  .content {
-    width: 320px;
-  }
 
   .codigo_tabela {
     display: none;
@@ -172,5 +165,10 @@ code {
   .codigo_documento {
     display: none;
   }
+}
 
+@media(max-width :425px) {
+  .content {
+    width: 320px;
+  }
 }
